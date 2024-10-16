@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LeetCode Blocker Settings</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      label, select {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LeetCode Blocker Settings</h1>
+
+    <!-- Problem Set Selector -->
+    <label for="problemSet">Select Problem Set:</label>
+    <select id="problemSet">
+      <option value="blind75.json">Blind 75 Problems</option>
+      <option value="neet150.json">NeetCode 150 Problems</option>
+      <option value="allProblems.json">All Problems</option>
+      <!-- Add more JSON files here as needed -->
+    </select>
+
+    <!-- Difficulty Selector -->
+    <label for="difficulty">Select Difficulty:</label>
+    <select id="difficulty">
+      <option value="all">All</option>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+
+    <button id="savePreferences">Save Preferences</button>
+
+    <script src="options.js"></script>
+  </body>
+</html>

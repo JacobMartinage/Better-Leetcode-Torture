@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode Blocker",
+  "version": "1.1",
+  "permissions": [
+    "storage",
+    "alarms",
+    "declarativeNetRequest",
+    "activeTab",
+    "scripting",
+    "cookies"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "options.html"
+  },
+  "host_permissions": [
+    "*://leetcode.com/*", 
+    "*://*/*"  
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://leetcode.com/submissions/detail/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
