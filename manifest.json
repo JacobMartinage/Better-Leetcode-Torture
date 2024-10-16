@@ -8,7 +8,8 @@
     "declarativeNetRequest",
     "activeTab",
     "scripting",
-    "cookies"
+    "webRequest",
+    "webRequestBlocking"
   ],
   "background": {
     "service_worker": "background.js"
@@ -17,12 +18,11 @@
     "default_popup": "options.html"
   },
   "host_permissions": [
-    "*://leetcode.com/*", 
-    "*://*/*"  
+    "<all_urls>" 
   ],
   "content_scripts": [
     {
-      "matches": ["*://leetcode.com/submissions/detail/*"],
+      "matches": ["*://leetcode.com/*submissions/detail/*"],
       "js": ["content.js"]
     }
   ]
