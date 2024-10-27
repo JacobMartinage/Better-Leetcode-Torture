@@ -1,4 +1,4 @@
-// Load problems from the selected JSON file based on the user's problem set selection
+// Load problems from the selected JSON file based on the user's problem set selection  (WORKS)
 async function loadProblemsFromSet(problemSet) {
   try {
     // Construct the full path using the assets folder
@@ -11,7 +11,7 @@ async function loadProblemsFromSet(problemSet) {
   }
 }
 
-// Apply the redirect rule to block other sites until the problem is solved
+// Apply the redirect rule to block other sites until the problem is solved (WORKS)
 const setRedirectRule = async (problemUrl) => {
   const RULE_ID = 1;
 
@@ -38,6 +38,10 @@ const setRedirectRule = async (problemUrl) => {
     });
 
     console.log("Redirect rule set successfully");
+    
+    // Store the current problem URL
+    currentProblemUrl = problemUrl;
+
   } catch (error) {
     console.error("Error setting redirect rule:", error);
   }
@@ -126,8 +130,7 @@ chrome.alarms.create("leetcodeReminder", { periodInMinutes: 10 });
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === "leetcodeReminder") {
     handleProblemAssignment();  // You can pass difficulty preferences here if needed
-  }
-});
+}});
 
 // Initialize when the extension is installed
 chrome.runtime.onInstalled.addListener(() => {
